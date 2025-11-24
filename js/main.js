@@ -21,7 +21,6 @@ export let comments = [
     },
 ];
 
-// Первый рендер
 renderComments(comments, addTextForm);
 
 function addFormComment() {
