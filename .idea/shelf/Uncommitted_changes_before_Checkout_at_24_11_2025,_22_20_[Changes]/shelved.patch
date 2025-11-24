@@ -1,0 +1,51 @@
+Index: index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!DOCTYPE html>\n<html>\n  <head>\n    <title>Проект \"Комменты\"</title>\n    <meta charset=\"utf-8\" />\n    <link rel=\"stylesheet\" href=\"styles.css\" />\n  </head>\n\n  <body>\n    <div class=\"container\">\n      <ul class=\"comments\">\n<!--        <li class=\"comment\">-->\n<!--          <div class=\"comment-header\">-->\n<!--            <div>Глеб Фокин</div>-->\n<!--            <div>12.02.22 12:18</div>-->\n<!--          </div>-->\n<!--          <div class=\"comment-body\">-->\n<!--            <div class=\"comment-text\">-->\n<!--              Это будет первый комментарий на этой странице-->\n<!--            </div>-->\n<!--          </div>-->\n<!--          <div class=\"comment-footer\">-->\n<!--            <div class=\"likes\">-->\n<!--              <span class=\"likes-counter\">3</span>-->\n<!--              <button class=\"like-button\"></button>-->\n<!--            </div>-->\n<!--          </div>-->\n<!--        </li>-->\n<!--        <li class=\"comment\">-->\n<!--          <div class=\"comment-header\">-->\n<!--            <div>Варвара Н.</div>-->\n<!--            <div>13.02.22 19:22</div>-->\n<!--          </div>-->\n<!--          <div class=\"comment-body\">-->\n<!--            <div class=\"comment-text\">-->\n<!--              Мне нравится как оформлена эта страница! ❤-->\n<!--            </div>-->\n<!--          </div>-->\n<!--          <div class=\"comment-footer\">-->\n<!--            <div class=\"likes\">-->\n<!--              <span class=\"likes-counter\">75</span>-->\n<!--              <button class=\"like-button -active-like\"></button>-->\n<!--            </div>-->\n<!--          </div>-->\n<!--        </li>-->\n      </ul>\n      <div class=\"add-form\">\n        <input\n          type=\"text\"\n          class=\"add-form-name\"\n          placeholder=\"Введите ваше имя\"\n        />\n        <textarea\n          type=\"textarea\"\n          class=\"add-form-text\"\n          placeholder=\"Введите ваш коментарий\"\n          rows=\"4\"\n        ></textarea>\n        <div class=\"add-form-row\">\n          <button class=\"add-form-button\">Написать</button>\n        </div>\n      </div>\n    </div>\n  </body>\n  <script type=\"module\" src=\"./js/main.js\"></script>\n</html>\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/index.html b/index.html
+--- a/index.html	(revision 16ba9ae6b46ceea24a47f45f8b916439cf55896c)
++++ b/index.html	(date 1764002535956)
+@@ -9,40 +9,6 @@
+   <body>
+     <div class="container">
+       <ul class="comments">
+-<!--        <li class="comment">-->
+-<!--          <div class="comment-header">-->
+-<!--            <div>Глеб Фокин</div>-->
+-<!--            <div>12.02.22 12:18</div>-->
+-<!--          </div>-->
+-<!--          <div class="comment-body">-->
+-<!--            <div class="comment-text">-->
+-<!--              Это будет первый комментарий на этой странице-->
+-<!--            </div>-->
+-<!--          </div>-->
+-<!--          <div class="comment-footer">-->
+-<!--            <div class="likes">-->
+-<!--              <span class="likes-counter">3</span>-->
+-<!--              <button class="like-button"></button>-->
+-<!--            </div>-->
+-<!--          </div>-->
+-<!--        </li>-->
+-<!--        <li class="comment">-->
+-<!--          <div class="comment-header">-->
+-<!--            <div>Варвара Н.</div>-->
+-<!--            <div>13.02.22 19:22</div>-->
+-<!--          </div>-->
+-<!--          <div class="comment-body">-->
+-<!--            <div class="comment-text">-->
+-<!--              Мне нравится как оформлена эта страница! ❤-->
+-<!--            </div>-->
+-<!--          </div>-->
+-<!--          <div class="comment-footer">-->
+-<!--            <div class="likes">-->
+-<!--              <span class="likes-counter">75</span>-->
+-<!--              <button class="like-button -active-like"></button>-->
+-<!--            </div>-->
+-<!--          </div>-->
+-<!--        </li>-->
+       </ul>
+       <div class="add-form">
+         <input
