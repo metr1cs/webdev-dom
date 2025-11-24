@@ -11,7 +11,7 @@ export function renderComments(comments, addTextForm) {
         newCommentElement.classList.add('comment');
         newCommentElement.innerHTML = `
             <div class="comment-header">
-                <div>${sanitizeHtml(comment.name)}</div>
+                <div>${sanitizeHtml(comments.name)}</div>
                 <div>${comment.date}</div>
             </div>
             <div class="comment-body">

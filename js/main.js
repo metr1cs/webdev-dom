@@ -1,27 +1,34 @@
 import { renderComments } from "./modules/render.js";
+import { getComments, postComment } from "./modules/api.js";
 
 const addButtonElement = document.querySelector('.add-form-button');
 const addNameForm = document.querySelector('.add-form-name');
 const addTextForm = document.querySelector('.add-form-text');
 
-export let comments = [
-    {
-        name: "Глеб Фокин",
-        date: "12.02.22 12:18",
-        text: "Это будет первый комментарий на этой странице",
-        likes: 3,
-        isLiked: false
-    },
-    {
-        name: "Варвара Н.",
-        date: "13.02.22 19:22",
-        text: "Мне нравится как оформлена эта страница! ❤",
-        likes: 3,
-        isLiked: true
-    },
-];
+export let comments = [];
 
-renderComments(comments, addTextForm);
+function loadCommentsFromApi() {
+    return getComments()
+        .then((responseData) => {
+            comments = responseData.comments.map(apiComment => ({
+                name: apiComment.author || apiComment.name || 'Аноним',
+                date: apiComment.date || apiComment.createdAt || new Date().toLocaleString(),
+                text: apiComment.text || apiComment.content || '',
+                likes: apiComment.likes || 0,
+                isLiked: false
+            }));
+            return comments;
+        })
+        .catch(error => {
+            alert("Не удалось загрузить комментарии");
+            return [];
+        });
+}
+
+loadCommentsFromApi().then(loadedComments => {
+    comments = loadedComments;
+    renderComments(comments, addTextForm);
+});
 
 function addFormComment() {
     addButtonElement.addEventListener('click', function (ev) {
@@ -30,17 +37,36 @@ function addFormComment() {
             return;
         }
 
-        comments.push({
-            name: addNameForm.value,
-            date: new Date().toLocaleString(),
-            text: addTextForm.value,
-            likes: 0,
-            isLiked: false
-        });
+        addButtonElement.disabled = true;
+        addButtonElement.textContent = 'Отправка...';
 
-        addNameForm.value = '';
-        addTextForm.value = '';
-        renderComments(comments, addTextForm);
+        postComment({
+            name: addNameForm.value,
+            text: addTextForm.value
+        })
+            .then(() => {
+                return getComments();
+            })
+            .then(responseData => {
+                comments = responseData.comments.map(apiComment => ({
+                    name: apiComment.author || apiComment.name || 'Аноним',
+                    date: apiComment.date || apiComment.createdAt || new Date().toLocaleString(),
+                    text: apiComment.text || apiComment.content || '',
+                    likes: apiComment.likes || 0,
+                    isLiked: false
+                }));
+
+                renderComments(comments, addTextForm);
+                addNameForm.value = '';
+                addTextForm.value = '';
+            })
+            .catch(error => {
+                alert("Ошибка отправки комментария: " + error.message);
+            })
+            .finally(() => {
+                addButtonElement.disabled = false;
+                addButtonElement.textContent = 'Написать';
+            });
     });
 }
 
