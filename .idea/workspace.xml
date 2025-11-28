@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aee2a1fc-0434-4cb9-b356-c1f323fb653a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/js/modules/formHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/modules/formatDate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/modules/init.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/modules/initApp.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/likes.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/comments.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1763990692813</updated>
       <workItem from="1763990693918" duration="13072000" />
-      <workItem from="1764326759779" duration="1261000" />
+      <workItem from="1764326759779" duration="1832000" />
     </task>
     <servers />
   </component>
