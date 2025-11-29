@@ -27,4 +27,5 @@ export function postComment({ name, text }) {
             }
             return response.json();
         });
+
 }

@@ -5,9 +5,12 @@ export function renderComments(comments) {
     const addTextForm = document.querySelector('.add-form-text');
     commentFormElement.innerHTML = '';
 
-    comments.forEach(comment => {
+    comments.forEach((comment, index) => {
         const newCommentElement = document.createElement('li');
         newCommentElement.classList.add('comment');
+
+        newCommentElement.dataset.index = index;
+
         newCommentElement.innerHTML = `
             <div class="comment-header">
                 <div>${sanitizeHtml(comment.name)}</div>
@@ -21,34 +24,10 @@ export function renderComments(comments) {
             <div class="comment-footer">
                 <div class="likes">
                     <span class="likes-counter">${comment.likes}</span>
-                    <button class="like-button ${comment.isLiked ? '-active-like' : ''}"></button>
+                    <button class="like-button ${comment.isLiked ? '-active-like' : ''}" data-index="${index}"></button>
                 </div>
             </div>
         `;
         commentFormElement.appendChild(newCommentElement);
-    });
-
-    const likeButtonsElement = document.querySelectorAll('.like-button');
-    likeButtonsElement.forEach((button, index) => {
-        button.addEventListener('click', () => {
-            if (comments[index].isLiked === false) {
-                comments[index].isLiked = true;
-                comments[index].likes += 1;
-            } else {
-                comments[index].isLiked = false;
-                comments[index].likes -= 1;
-            }
-            renderComments(comments);
-        });
-    });
-
-    const commentElements = document.querySelectorAll('.comment');
-    commentElements.forEach((commentElement, index) => {
-        commentElement.addEventListener('click', (ev) => {
-            if (!ev.target.closest('.like-button')) {
-                const comment = comments[index];
-                addTextForm.value = `> ${comment.text}\n${comment.name}, `;
-            }
-        });
     });
 }
