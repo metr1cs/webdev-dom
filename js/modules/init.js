@@ -1,6 +1,11 @@
-import { loadComments, setupReplyToComment } from "./comments.js";
+// init.js (ИСПРАВЛЕНО)
+
+import { loadComments } from "./comments.js";
 import { initFormHandler } from "./formHandler.js";
 import { renderComments } from "./render.js";
+import { initLikeHandler } from './likesHandler.js';
+import { initReplyHandler } from './replyHandler.js';
+
 
 export function initApp() {
     const commentsElement = document.querySelector('.comments');
@@ -9,7 +14,9 @@ export function initApp() {
     function updateComments(comments) {
         currentComments = comments;
         renderComments(comments);
-        setupReplyToComment(comments);
+
+        initLikeHandler(currentComments, updateComments);
+        initReplyHandler(currentComments);
     }
 
     function showLoading() {
@@ -23,12 +30,8 @@ export function initApp() {
     // Загрузка комментариев
     showLoading();
     loadComments()
-        .then(comments => {
-            updateComments(comments);
-        })
-        .catch(error => {
-            showError();
-        });
+        .then(updateComments)
+        .catch(showError);
 
     // Инициализация формы
     initFormHandler(updateComments);

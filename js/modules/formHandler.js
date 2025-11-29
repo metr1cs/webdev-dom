@@ -1,6 +1,8 @@
+// formHandler.js
+
 import { postComment } from "./api.js";
 import { loadComments } from "./comments.js";
-import { renderComments } from "./render.js";
+
 
 export function initFormHandler(onCommentsUpdate) {
     const addFormElement = document.querySelector('.add-form');
@@ -22,25 +24,25 @@ export function initFormHandler(onCommentsUpdate) {
         })
             .then(() => loadComments())
             .then(comments => {
+
                 onCommentsUpdate(comments);
                 resetForm();
-                initFormHandler(onCommentsUpdate); // Переинициализация обработчиков
+
             })
             .catch(error => {
                 console.error('Ошибка отправки комментария:', error);
                 resetForm();
-                initFormHandler(onCommentsUpdate); // Переинициализация обработчиков
                 alert("Ошибка отправки комментария");
             });
     });
 
     function resetForm() {
         addFormElement.innerHTML = `
-            <input type="text" class="add-form-name" placeholder="Введите ваше имя" />
-            <textarea type="textarea" class="add-form-text" placeholder="Введите ваш коментарий" rows="4"></textarea>
-            <div class="add-form-row">
-                <button class="add-form-button">Написать</button>
-            </div>
-        `;
+                                <input type="text" class="add-form-name" placeholder="Введите ваше имя" />
+                                <textarea type="textarea" class="add-form-text" placeholder="Введите ваш коментарий" rows="4"></textarea>
+                                <div class="add-form-row">
+                                    <button class="add-form-button">Написать</button>
+                                </div>
+                                `;
     }
 }
