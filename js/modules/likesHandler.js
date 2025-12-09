@@ -3,7 +3,7 @@ export function initLikeHandler(comments, updateComments) {
 
     commentFormElement.addEventListener('click', (event) => {
         const button = event.target.closest('.like-button');
-        if (!button) return; // Если кликнули не на кнопку
+        if (!button) return;
 
         event.stopPropagation();
 

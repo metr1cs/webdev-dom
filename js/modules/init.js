@@ -1,5 +1,3 @@
-// init.js (ИСПРАВЛЕНО)
-
 import { loadComments } from "./comments.js";
 import { initFormHandler } from "./formHandler.js";
 import { renderComments } from "./render.js";
@@ -14,9 +12,6 @@ export function initApp() {
     function updateComments(comments) {
         currentComments = comments;
         renderComments(comments);
-
-        initLikeHandler(currentComments, updateComments);
-        initReplyHandler(currentComments);
     }
 
     function showLoading() {
@@ -27,12 +22,14 @@ export function initApp() {
         commentsElement.innerHTML = '<div class="error">Не удалось загрузить комментарии</div>';
     }
 
-    // Загрузка комментариев
     showLoading();
     loadComments()
-        .then(updateComments)
+        .then(comments => {
+            updateComments(comments);
+            initLikeHandler(currentComments, updateComments);
+            initReplyHandler(currentComments);
+        })
         .catch(showError);
 
-    // Инициализация формы
     initFormHandler(updateComments);
 }

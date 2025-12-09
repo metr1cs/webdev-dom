@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aee2a1fc-0434-4cb9-b356-c1f323fb653a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/js/modules/likesHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/modules/replyHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_11_2025,_22_20_[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/api.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/comments.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/comments.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/formHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/formHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/modules/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/initApp.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/initApp.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/render.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/initApp.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/likesHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/likesHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/replyHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/replyHandler.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,7 +85,10 @@
       <workItem from="1764326759779" duration="1832000" />
       <workItem from="1764413531813" duration="65000" />
       <workItem from="1764416297837" duration="2021000" />
-      <workItem from="1764440834368" duration="1660000" />
+      <workItem from="1764440834368" duration="1848000" />
+      <workItem from="1764534617096" duration="1642000" />
+      <workItem from="1764668773155" duration="19000" />
+      <workItem from="1765274754723" duration="1366000" />
     </task>
     <servers />
   </component>

@@ -1,15 +1,20 @@
-
 export function initReplyHandler(comments) {
     const addTextForm = document.querySelector('.add-form-text');
-    const commentElements = document.querySelectorAll('.comment');
+    const commentsContainer = document.querySelector('.comments'); // Находим родительский контейнер
 
-    commentElements.forEach((commentElement, index) => {
-        commentElement.addEventListener('click', (ev) => {
+    // Используем делегирование событий на контейнере
+    commentsContainer.addEventListener('click', (ev) => {
+        const commentElement = ev.target.closest('.comment');
 
-            if (!ev.target.closest('.like-button')) {
-                const comment = comments[index];
-                addTextForm.value = `> ${comment.text}\n${comment.name}, `;
-            }
-        });
+        // Проверяем, что клик был по комментарию, но не по кнопке лайка
+        if (commentElement && !ev.target.closest('.like-button')) {
+            // Получаем индекс из data-атрибута элемента (он задается в render.js)
+            const index = parseInt(commentElement.dataset.index);
+            const comment = comments[index];
+
+            const sanitizedText = comment.text.replace(/\n/g, ' '); // Заменяем переносы строки на пробелы
+            addTextForm.value = `> ${sanitizedText}\n${comment.name}, `;
+        }
     });
+
 }
