@@ -1,14 +1,14 @@
 import { sanitizeHtml } from './sanitize.js';
+import { initLikeHandler } from './likesHandler.js'; // Импортируем сюда
+import { initReplyHandler } from './replyHandler.js'; // Импортируем сюда
 
 export function renderComments(comments) {
     const commentFormElement = document.querySelector('.comments');
-    const addTextForm = document.querySelector('.add-form-text');
     commentFormElement.innerHTML = '';
 
     comments.forEach((comment, index) => {
         const newCommentElement = document.createElement('li');
         newCommentElement.classList.add('comment');
-
         newCommentElement.dataset.index = index;
 
         newCommentElement.innerHTML = `
@@ -17,9 +17,7 @@ export function renderComments(comments) {
                 <div>${comment.date}</div>
             </div>
             <div class="comment-body">
-                <div class="comment-text">
-                    ${sanitizeHtml(comment.text)}
-                </div>
+                <div class="comment-text">${sanitizeHtml(comment.text)}</div>
             </div>
             <div class="comment-footer">
                 <div class="likes">
@@ -30,4 +28,7 @@ export function renderComments(comments) {
         `;
         commentFormElement.appendChild(newCommentElement);
     });
+
+    initLikeHandler(comments, renderComments);
+    initReplyHandler(comments);
 }

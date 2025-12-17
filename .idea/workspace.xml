@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="aee2a1fc-0434-4cb9-b356-c1f323fb653a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_24_11_2025,_22_20_[Changes]/shelved.patch" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gigaide/gigaide.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/formHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/formHandler.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/modules/init.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/init.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/initApp.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/js/modules/likesHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/likesHandler.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/modules/replyHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/replyHandler.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/render.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/render.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +43,9 @@
   }
 }</component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="/opt/homebrew/Cellar/php/8.4.10/bin/php" />
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="2" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -58,11 +61,13 @@
     &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;03-npm&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -74,6 +79,7 @@
       </set>
     </attachedChunks>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="уровень приложения" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="aee2a1fc-0434-4cb9-b356-c1f323fb653a" name="Changes" comment="" />
@@ -88,7 +94,11 @@
       <workItem from="1764440834368" duration="1848000" />
       <workItem from="1764534617096" duration="1642000" />
       <workItem from="1764668773155" duration="19000" />
-      <workItem from="1765274754723" duration="1366000" />
+      <workItem from="1765274754723" duration="2230000" />
+      <workItem from="1765300964852" duration="859000" />
+      <workItem from="1765303061752" duration="7000" />
+      <workItem from="1765318664830" duration="1445000" />
+      <workItem from="1765994081647" duration="759000" />
     </task>
     <servers />
   </component>

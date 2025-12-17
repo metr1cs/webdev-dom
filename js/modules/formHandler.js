@@ -1,8 +1,5 @@
-// formHandler.js
-
 import { postComment } from "./api.js";
 import { loadComments } from "./comments.js";
-
 
 export function initFormHandler(onCommentsUpdate) {
     const addFormElement = document.querySelector('.add-form');
@@ -11,38 +8,33 @@ export function initFormHandler(onCommentsUpdate) {
     const addTextForm = document.querySelector('.add-form-text');
 
     addButtonElement.addEventListener('click', function () {
-        if (addNameForm.value.trim() === '' || addTextForm.value.trim() === '') {
+        const name = addNameForm.value.trim();
+        const text = addTextForm.value.trim();
+
+        if (name === '' || text === '') {
             alert('Не все поля заполнены');
             return;
         }
 
-        addFormElement.innerHTML = '<div class="form-loading">Комментарий добавляется...</div>';
+        addButtonElement.disabled = true;
+        addButtonElement.textContent = 'Добавление...';
 
-        postComment({
-            name: addNameForm.value,
-            text: addTextForm.value
-        })
+        postComment({ name, text })
             .then(() => loadComments())
             .then(comments => {
-
                 onCommentsUpdate(comments);
-                resetForm();
-
+                // Очищаем поля
+                addNameForm.value = '';
+                addTextForm.value = '';
             })
             .catch(error => {
-                console.error('Ошибка отправки комментария:', error);
-                resetForm();
+                console.error('Ошибка:', error);
                 alert("Ошибка отправки комментария");
+            })
+            .finally(() => {
+                // Возвращаем кнопку в рабочее состояние в любом случае
+                addButtonElement.disabled = false;
+                addButtonElement.textContent = 'Написать';
             });
     });
-
-    function resetForm() {
-        addFormElement.innerHTML = `
-                                <input type="text" class="add-form-name" placeholder="Введите ваше имя" />
-                                <textarea type="textarea" class="add-form-text" placeholder="Введите ваш коментарий" rows="4"></textarea>
-                                <div class="add-form-row">
-                                    <button class="add-form-button">Написать</button>
-                                </div>
-                                `;
-    }
 }
