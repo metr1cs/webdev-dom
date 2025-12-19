@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="23145b9c-0bed-47cf-889f-f0537fae98c0" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/modules/formHandler.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/modules/formHandler.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +48,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "07-error",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
