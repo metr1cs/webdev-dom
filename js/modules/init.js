@@ -1,24 +1,13 @@
 import { loadComments } from "./comments.js";
-import { initFormHandler } from "./formHandler.js";
 import { renderComments } from "./render.js";
-import { initLikeHandler } from './likesHandler.js';
-import { initReplyHandler } from './replyHandler.js';
 
 export function initApp() {
-    const commentsElement = document.querySelector('.comments');
+    const appElement = document.getElementById("app");
+    if (!appElement) return;
 
-    function showLoading() {
-        commentsElement.innerHTML = '<div class="loading">Комментарии загружаются...</div>';
-    }
+    appElement.innerHTML = "Загрузка комментариев...";
 
-    showLoading();
-    loadComments()
-        .then(comments => {
-            renderComments(comments);
-        })
-        .catch(() => {
-            commentsElement.innerHTML = '<div class="error">Не удалось загрузить комментарии</div>';
-        });
-
-    initFormHandler(renderComments);
+    loadComments().then(comments => {
+        renderComments(comments);
+    });
 }
